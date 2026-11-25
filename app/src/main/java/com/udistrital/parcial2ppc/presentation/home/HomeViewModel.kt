@@ -1,8 +1,8 @@
-package com.example.plansppc.presentation.home
+package com.udistrital.parcial2ppc.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.plansppc.domain.usecase.GetPlanesUseCase
+import com.udistrital.parcial2ppc.domain.usecase.GetPlanesUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

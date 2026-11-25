@@ -1,6 +1,6 @@
-package com.example.plansppc.presentation.home
+package com.udistrital.parcial2ppc.presentation.home
 
-import com.example.plansppc.data.model.PlanSummary
+import com.udistrital.parcial2ppc.data.model.PlanSummary
 
 data class HomeUiState(
     val isLoading: Boolean = false,

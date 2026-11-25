@@ -1,18 +1,18 @@
-package com.example.plansppc.presentation.viewmodel
+package com.udistrital.parcial2ppc.presentation.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.plansppc.data.model.MiembroEntity
-import com.example.plansppc.data.model.PlanDetail
-import com.example.plansppc.data.model.PlanSummary
-import com.example.plansppc.data.remote.RetrofitClient
-import com.example.plansppc.data.repository.AhorroRepositoryImpl
-import com.example.plansppc.domain.usecase.CrearPlanUseCase
-import com.example.plansppc.domain.usecase.GetDetallePlanUseCase
-import com.example.plansppc.domain.usecase.GetPlanesUseCase
-import com.example.plansppc.domain.usecase.RegistrarPagoUseCase
-import com.example.plansppc.utils.CurrencyUtils
+import com.udistrital.parcial2ppc.data.model.MiembroEntity
+import com.udistrital.parcial2ppc.data.model.PlanDetail
+import com.udistrital.parcial2ppc.data.model.PlanSummary
+import com.udistrital.parcial2ppc.data.remote.RetrofitClient
+import com.udistrital.parcial2ppc.data.repository.AhorroRepositoryImpl
+import com.udistrital.parcial2ppc.domain.usecase.CrearPlanUseCase
+import com.udistrital.parcial2ppc.domain.usecase.GetDetallePlanUseCase
+import com.udistrital.parcial2ppc.domain.usecase.GetPlanesUseCase
+import com.udistrital.parcial2ppc.domain.usecase.RegistrarPagoUseCase
+import com.udistrital.parcial2ppc.utils.CurrencyUtils
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -36,13 +36,13 @@ class SavingsViewModel(application: Application) : AndroidViewModel(application)
     private val _currentScreen = MutableStateFlow<Screen>(Screen.Home)
     val currentScreen: StateFlow<Screen> = _currentScreen.asStateFlow()
 
-    // private val _planesList = MutableStateFlow<List<PlanSummary>>(emptyList())
+    private val _planesList = MutableStateFlow<List<PlanSummary>>(emptyList())
     val planesList: StateFlow<List<PlanSummary>> = _planesList.asStateFlow()
 
     private val _selectedPlanDetail = MutableStateFlow<PlanDetail?>(null)
-  //   val selectedPlanDetail: StateFlow<PlanDetail?> = _selectedPlanDetail.asStateFlow()
+    val selectedPlanDetail: StateFlow<PlanDetail?> = _selectedPlanDetail.asStateFlow()
 
-    // private val _selectedPlanMiembros = MutableStateFlow<List<MiembroEntity>>(emptyList())
+    private val _selectedPlanMiembros = MutableStateFlow<List<MiembroEntity>>(emptyList())
     val selectedPlanMiembros: StateFlow<List<MiembroEntity>> = _selectedPlanMiembros.asStateFlow()
 
     private val _isLoading = MutableStateFlow(false)

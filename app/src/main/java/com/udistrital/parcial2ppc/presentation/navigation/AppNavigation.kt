@@ -3,12 +3,12 @@ package com.udistrital.parcial2ppc.presentation.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import com.example.plansppc.presentation.crear_plan.CrearPlanScreen
-import com.example.plansppc.presentation.detalle_plan.DetallePlanScreen
-import com.example.plansppc.presentation.home.HomeScreen
-import com.example.plansppc.presentation.registrar_pago.RegistrarPagoScreen
-import com.example.plansppc.presentation.viewmodel.SavingsViewModel
-import com.example.plansppc.presentation.viewmodel.Screen
+import com.udistrital.parcial2ppc.presentation.crear_viaje.CrearPlanScreen
+import com.udistrital.parcial2ppc.presentation.detalle_plan.DetallePlanScreen
+import com.udistrital.parcial2ppc.presentation.home.HomeScreen
+import com.udistrital.parcial2ppc.presentation.registrar_pago.RegistrarPagoScreen
+import com.udistrital.parcial2ppc.presentation.viewmodel.SavingsViewModel
+import com.udistrital.parcial2ppc.presentation.viewmodel.Screen
 
 @Composable
 fun AppNavigation(

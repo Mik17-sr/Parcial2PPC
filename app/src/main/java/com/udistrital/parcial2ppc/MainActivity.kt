@@ -1,4 +1,4 @@
-package com.example.plansppc
+package com.udistrital.parcial2ppc
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,9 +9,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.udistrital.parcial2ppc.navigation.AppNavigation
+import com.udistrital.parcial2ppc.presentation.navigation.AppNavigation
 import com.udistrital.parcial2ppc.presentation.theme.PlansPPCTheme
-import com.udistrital.parcial2ppc.viewmodel.SavingsViewModel
+import com.udistrital.parcial2ppc.presentation.viewmodel.SavingsViewModel
 
 class MainActivity : ComponentActivity() {
     private val viewModel: SavingsViewModel by viewModels()

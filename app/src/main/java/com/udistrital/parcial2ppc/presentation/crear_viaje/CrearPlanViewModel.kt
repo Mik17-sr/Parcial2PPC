@@ -1,9 +1,9 @@
-package com.example.plansppc.presentation.crear_plan
+package com.udistrital.parcial2ppc.presentation.crear_viaje
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.plansppc.domain.usecase.CrearPlanUseCase
-import com.example.plansppc.utils.CurrencyUtils
+import com.udistrital.parcial2ppc.domain.usecase.CrearPlanUseCase
+import com.udistrital.parcial2ppc.utils.CurrencyUtils
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

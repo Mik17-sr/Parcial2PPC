@@ -24,10 +24,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.plansppc.presentation.theme.GreenPrimary
-import com.example.plansppc.presentation.theme.GreenSecondary
-import com.example.plansppc.presentation.theme.PlansPPCTheme
-import com.example.plansppc.presentation.theme.TextDark
+import com.udistrital.parcial2ppc.presentation.theme.GreenPrimary
+import com.udistrital.parcial2ppc.presentation.theme.GreenSecondary
+import com.udistrital.parcial2ppc.presentation.theme.PlansPPCTheme
+import com.udistrital.parcial2ppc.presentation.theme.TextDark
 
 @Composable
 fun AppAlertDialog(
