@@ -1,8 +1,10 @@
 package com.udistrital.parcial2ppc.domain.repository
 
+import com.udistrital.parcial2ppc.domain.model.Place
+
 interface PlaceRepository {
-    suspend fun getPlaces(): Result<List<SavingPlan>>
-    suspend fun (planId: String): Result<SavingPlan>
-    suspend fun createPlan(plan: SavingPlan): Result<SavingPlan>
-    suspend fun registerPayment(planId: String, memberId: String, amount: Double): Result<Unit>
+    suspend fun getPlaces(tripId: String): Result<List<Place>>
+    suspend fun getPlaceById(placeId: String): Result<Place>
+    suspend fun createPlace(place: Place): Result<Place>
+    suspend fun updatePlace(place: Place): Result<Unit>
 }

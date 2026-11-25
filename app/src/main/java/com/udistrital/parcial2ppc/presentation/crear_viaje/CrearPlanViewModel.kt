@@ -2,17 +2,19 @@ package com.udistrital.parcial2ppc.presentation.crear_viaje
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.udistrital.parcial2ppc.domain.usecase.CrearPlanUseCase
+import com.udistrital.parcial2ppc.data.repository.TripRepositoryImpl
+import com.udistrital.parcial2ppc.domain.usecase.CreateTripUseCase
+import com.udistrital.parcial2ppc.domain.model.Trip
 import com.udistrital.parcial2ppc.utils.CurrencyUtils
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import com.udistrital.parcial2ppc.data.remote.RetrofitClient
 
-class CrearPlanViewModel(
-    private val crearPlanUseCase: CrearPlanUseCase
-) : ViewModel() {
-
+class CrearPlanViewModel : ViewModel() {
+    private val repository = TripRepositoryImpl(RetrofitClient.api)
+    private val crearPlanUseCase = CreateTripUseCase(repository)
     private val _uiState = MutableStateFlow(CrearPlanUiState())
     val uiState: StateFlow<CrearPlanUiState> = _uiState.asStateFlow()
 
@@ -43,12 +45,19 @@ class CrearPlanViewModel(
             return
         }
 
+        val trip = Trip(
+            name = motivo,
+            destination = "Destino desconocido", // placeholder o agregar a los parámetros
+            startDate = "2026-01-01", // placeholder
+            endDate = "2026-12-31" // placeholder
+        )
+
         _uiState.value = _uiState.value.copy(isLoading = true, errorMessage = null)
 
         viewModelScope.launch {
             try {
-                val resultId = crearPlanUseCase(motivo, cleanMeta, meses, miembrosList)
-                if (resultId != -1L) {
+                val result = crearPlanUseCase(trip)
+                if (result.isSuccess) {
                     _uiState.value = _uiState.value.copy(
                         isLoading = false,
                         isSuccess = true,
