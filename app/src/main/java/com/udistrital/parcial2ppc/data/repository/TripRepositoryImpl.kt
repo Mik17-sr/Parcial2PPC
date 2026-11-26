@@ -3,6 +3,7 @@ package com.udistrital.parcial2ppc.data.repository
 import com.udistrital.parcial2ppc.data.remote.TripApiService
 import com.udistrital.parcial2ppc.data.remote.dto.CreateTripDTO
 import com.udistrital.parcial2ppc.domain.model.Trip
+import com.udistrital.parcial2ppc.domain.model.Place
 import com.udistrital.parcial2ppc.domain.repository.TripRepository
 
 class TripRepositoryImpl(
@@ -35,7 +36,18 @@ class TripRepositoryImpl(
                 name = dto.name ?: "",
                 destination = dto.destination ?: "",
                 startDate = dto.startDate ?: "",
-                endDate = dto.endDate ?: ""
+                endDate = dto.endDate ?: "",
+                places = dto.places.orEmpty().map { place ->
+                    Place(
+                        id = place.id ?: "",
+                        tripId = place.tripId ?: tripId,
+                        name = place.name ?: "",
+                        description = place.description ?: "",
+                        city = place.city ?: "",
+                        categoryId = place.categoryId ?: 0,
+                        tentativeDate = place.tentativeDate ?: ""
+                    )
+                }
             )
             Result.success(trip)
         } catch (e: Exception) {

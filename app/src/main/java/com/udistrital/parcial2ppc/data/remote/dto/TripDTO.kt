@@ -9,5 +9,6 @@ data class TripDTO(
     @SerializedName("startDate") val startDate: String? = null,
     @SerializedName("endDate") val endDate: String? = null,
     @SerializedName("createdAt") val createdAt: String? = null,
-    @SerializedName("updatedAt") val updatedAt: String? = null
+    @SerializedName("updatedAt") val updatedAt: String? = null,
+    @SerializedName("places") val places: List<PlaceDTO>? = null
 )

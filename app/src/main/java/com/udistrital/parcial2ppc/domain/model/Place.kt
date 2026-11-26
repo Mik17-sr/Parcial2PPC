@@ -4,7 +4,7 @@ data class Place (
     val id: String = "",
     val tripId: String = "",
     val name: String = "",
-    val description: Double = 0.0,
+    val description: String = "",
     val city: String = "",
     val categoryId: Int = 0,
     val tentativeDate: String = "",

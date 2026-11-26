@@ -8,4 +8,5 @@ data class Trip (
     val endDate: String = "",
     val createdAt: String = "",
     val updatedAt: String = "",
+    val places: List<Place> = emptyList()
 )
